@@ -14,7 +14,7 @@ void push()
 
     if (top == 9)
     {
-        printf("Stack Overflow!");
+        printf("Stack Overflow!\n");
         return;
     }
     else
@@ -30,25 +30,27 @@ void pop()
 {
     if (top == -1)
     {
-        printf("Stack Underflow!");
+        printf("Stack Underflow!\n");
         return;
     }
 
-    printf("Pop value : %d", stack[top--]);
+    printf("Pop value : %d\n", stack[top--]);
 }
 
 void display()
 {
     if (top == -1)
     {
-        printf("Empty Stack!");
+        printf("Empty Stack!\n");
         return;
     }
 
+    printf("Stack :");
     for (int i = top; i >= 0; i--)
     {
-        printf("%d\t", stack[i]);
+        printf("  %d", stack[i]);
     }
+    printf("\n");
 }
 
 void peep()
@@ -59,11 +61,11 @@ void peep()
 
     if (top - pos + 1 < 0)
     {
-        printf("Stack Underflow!");
+        printf("Stack Underflow!\n");
         return;
     }
 
-    printf("Peep value : %d", stack[top - pos + 1]);
+    printf("Peep value : %d\n", stack[top - pos + 1]);
 }
 
 void change()
@@ -77,7 +79,7 @@ void change()
 
     if (top - pos + 1 < 0)
     {
-        printf("Stack Underflow!");
+        printf("Stack Underflow!\n");
         return;
     }
 
@@ -105,24 +107,28 @@ void main()
         {
         case 1:
             push();
+            display();
             break;
         case 2:
             pop();
+            display();
             break;
         case 3:
             peep();
+            display();
             break;
         case 4:
             change();
+            display();
             break;
         case 5:
             display();
             break;
         case 6:
-            printf("Exit!");
+            printf("Exit!\n");
             break;
         default:
-            printf("Invalide choice!");
+            printf("Invalide choice!\n");
             break;
         }
 

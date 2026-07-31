@@ -209,30 +209,36 @@ void main()
         {
         case 1:
             insertfirst();
+            display();
             break;
         case 2:
             display();
             break;
         case 3:
             deletefirst();
+            display();
             break;
         case 4:
             insertlast();
+            display();
             break;
         case 5:
             deletelast();
+            display();
             break;
         case 6:
             deleteposition();
+            display();
             break;
         case 7:
             countnode();
+            display();
             break;
         case 8:
             printf("Exit !\n");
             break;
         default:
-            printf("Invalid choice!");
+            printf("Invalid choice!\n");
             break;
         }
 

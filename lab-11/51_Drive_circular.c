@@ -182,15 +182,18 @@ void main()
         {
         case 1:
             insertfirst();
+            display();
             break;
         case 2:
             display();
             break;
         case 3:
             insertlast();
+            display();
             break;
         case 4:
             deleteposition();
+            display();
             break;
         case 5:
             printf("Exit !\n");
