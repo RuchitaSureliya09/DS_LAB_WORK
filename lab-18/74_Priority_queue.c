@@ -1,3 +1,5 @@
+// 74. WAP to implement Priority Queue.
+
 #include <stdio.h>
 #define max 10
 
