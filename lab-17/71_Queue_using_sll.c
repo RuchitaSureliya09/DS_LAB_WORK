@@ -3,18 +3,18 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-struct Node
+struct QueueNode
 {
     int info;
-    struct Node *link;
+    struct QueueNode *link;
 };
 
-struct Node *front = NULL;
-struct Node *rear = NULL;
+struct QueueNode *front = NULL;
+struct QueueNode *rear = NULL;
 
 void enqueue()
 {
-    struct Node *Newnode = (struct Node *)malloc(sizeof(struct Node));
+    struct QueueNode *Newnode = (struct QueueNode *)malloc(sizeof(struct QueueNode));
 
     printf("Enter value : ");
     scanf("%d", &Newnode->info);
@@ -40,7 +40,7 @@ void dequeue()
         return;
     }
 
-    struct Node *save = front;
+    struct QueueNode *save = front;
 
     printf("Dequeue element : %d\n", front->info);
 
@@ -60,7 +60,7 @@ void display()
         return;
     }
 
-    struct Node *save = front;
+    struct QueueNode *save = front;
 
     printf("Queue : ");
     while (save != NULL)
