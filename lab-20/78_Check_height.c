@@ -32,9 +32,7 @@ struct Node *createTree()
     scanf("%d", &val);
 
     if (val == -1)
-    {
         return NULL;
-    }
 
     struct Node *root = createNode(val);
 
@@ -53,37 +51,28 @@ int height(struct Node *root)
     int rightHeight;
 
     if (root == NULL)
-    {
         return 0;
-    }
+
 
     leftHeight = height(root->left);
 
     if (leftHeight == -1)
-    {
         return -1;
-    }
 
     rightHeight = height(root->right);
 
     if (rightHeight == -1)
-    {
         return -1;
-    }
+
 
     if (abs(leftHeight - rightHeight) > 1)
-    {
         return -1;
-    }
+
 
     if (leftHeight > rightHeight)
-    {
         return leftHeight + 1;
-    }
     else
-    {
         return rightHeight + 1;
-    }
 }
 
 void main()
@@ -94,15 +83,10 @@ void main()
     printf("Enter tree (-1 for NULL):\n");
 
     root = createTree();
-
     result = height(root);
 
     if (result == -1)
-    {
         printf("Output: FALSE\n");
-    }
     else
-    {
         printf("Output: TRUE\n");
-    }
 }

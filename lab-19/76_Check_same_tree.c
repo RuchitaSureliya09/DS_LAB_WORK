@@ -31,9 +31,7 @@ struct Node* createTree()
     scanf("%d", &val);
 
     if (val == -1)
-    {
         return NULL;
-    }
 
     struct Node *newNode;
 
@@ -51,22 +49,17 @@ struct Node* createTree()
 int isSameTree(struct Node *root1, struct Node *root2)
 {
     if (root1 == NULL && root2 == NULL)
-    {
         return 1;
-    }
 
     if (root1 == NULL || root2 == NULL)
-    {
         return 0;
-    }
 
     if (root1->data != root2->data)
-    {
         return 0;
-    }
 
-    return isSameTree(root1->left, root2->left) &&
-           isSameTree(root1->right, root2->right);
+    return (isSameTree(root1->left, root2->left) 
+                            &&
+            isSameTree(root1->right, root2->right));
 }
 
 void main()
@@ -81,11 +74,7 @@ void main()
     root2 = createTree();
 
     if (isSameTree(root1, root2))
-    {
         printf("\nGiven trees are same.\n");
-    }
     else
-    {
         printf("\nGiven trees are not same.\n");
-    }
 }

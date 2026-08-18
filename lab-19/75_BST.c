@@ -80,13 +80,9 @@ void delete(int val)
         parent = temp;
 
         if (val < temp->data)
-        {
             temp = temp->left;
-        }
         else
-        {
             temp = temp->right;
-        }
     }
 
     if (temp == NULL)
@@ -98,17 +94,11 @@ void delete(int val)
     if (temp->left == NULL && temp->right == NULL)
     {
         if (parent == NULL)
-        {
             root = NULL;
-        }
         else if (parent->left == temp)
-        {
             parent->left = NULL;
-        }
         else
-        {
             parent->right = NULL;
-        }
 
         free(temp);
 
@@ -129,13 +119,9 @@ void delete(int val)
         temp->data = successor->data;
 
         if (successorParent->left == successor)
-        {
             successorParent->left = successor->right;
-        }
         else
-        {
             successorParent->right = successor->right;
-        }
 
         free(successor);
 
@@ -147,26 +133,17 @@ void delete(int val)
         struct Node *child;
 
         if (temp->left != NULL)
-        {
             child = temp->left;
-        }
         else
-        {
             child = temp->right;
-        }
+            
 
         if (parent == NULL)
-        {
             root = child;
-        }
         else if (parent->left == temp)
-        {
             parent->left = child;
-        }
-        else
-        {   
+        else   
             parent->right = child;
-        }
 
         free(temp);
     }

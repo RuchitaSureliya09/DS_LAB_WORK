@@ -31,9 +31,7 @@ struct Node* createTree()
     scanf("%d", &val);
 
     if (val == -1)
-    {
         return NULL;
-    }
 
     struct Node *newNode;
 
@@ -51,22 +49,17 @@ struct Node* createTree()
 int isMirrorTree(struct Node *root1, struct Node *root2)
 {
     if (root1 == NULL && root2 == NULL)
-    {
         return 1;
-    }
 
     if (root1 == NULL || root2 == NULL)
-    {
         return 0;
-    }
 
     if (root1->data != root2->data)
-    {
         return 0;
-    }
 
-    return isMirrorTree(root1->left, root2->right) &&
-           isMirrorTree(root1->right, root2->left);
+    return (isMirrorTree(root1->left, root2->right) 
+                            &&
+            isMirrorTree(root1->right, root2->left));
 }
 
 void main()
@@ -78,12 +71,8 @@ void main()
     root1 = createTree();
 
     if (isMirrorTree(root1->left, root1->right))
-    {
         printf("\nGiven trees are Symmetric.\n");
-    }
     else
-    {
         printf("\nGiven trees are not Symmetric.\n");
-    }
 
 }
