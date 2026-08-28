@@ -30,8 +30,7 @@ struct Node *createlist(struct Node *first, int n)
 
         if (first == NULL)
         {
-            first = Newnode;
-            last = Newnode;
+            first = last = Newnode;
             continue;
         }
 
