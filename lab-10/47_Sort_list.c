@@ -1,5 +1,5 @@
 // 47. Write a program to sort elements of a linked list.
-// by info
+// by change info
 
 #include <stdio.h>
 #include <stdlib.h>
