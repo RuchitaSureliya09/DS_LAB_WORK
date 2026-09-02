@@ -59,9 +59,7 @@ void main()
         if (a[i][0] <= end)
         {
             if (a[i][1] > end)
-            {
                 end = a[i][1];
-            }
         }
         else
         {
