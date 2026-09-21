@@ -61,14 +61,14 @@ int findLargest(struct Node *root)
 void main()
 {
     struct Node *root = NULL;
-    int n, val, i;
+    int n, val;
 
     printf("Enter number of nodes: ");
     scanf("%d", &n);
 
     printf("Enter elements: ");
 
-    for (i = 0; i < n; i++)
+    for (int i = 0; i < n; i++)
     {
         scanf("%d", &val);
         root = insert(root, val);
