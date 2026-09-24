@@ -49,35 +49,34 @@ void main()
 
             switch (str[i])
             {
-            case '+':
-                result = op1 + op2;
-                break;
-            case '-':
-                result = op1 - op2;
-                break;
-            case '*':
-                result = op1 * op2;
-                break;
-            case '/':
-                if (op2 == 0)
-                {
-                    printf("Division by zero not possible!\n");
+                case '+':
+                    result = op1 + op2;
+                    break;
+                case '-':
+                    result = op1 - op2;
+                    break;
+                case '*':
+                    result = op1 * op2;
+                    break;
+                case '/':
+                    if (op2 == 0)
+                    {
+                        printf("Division by zero not possible!\n");
+                        return;
+                    }
+                    result = op1 / op2;
+                    break;
+                case '%':
+                    if (op2 == 0)
+                    {
+                        printf("Modulo by zero not possible!\n");
+                        return;
+                    }
+                    result = op1 % op2;
+                    break;
+                default:
+                    printf("Invalid operator! Check your expression.");
                     return;
-                }
-                result = op1 / op2;
-                break;
-            case '%':
-                if (op2 == 0)
-                {
-                    printf("Modulo by zero not possible!\n");
-                    return;
-                }
-                result = op1 % op2;
-                break;
-                ;
-            default:
-                printf("Invalid operator! Check your expression.");
-                return;
             }
 
             push(result);
