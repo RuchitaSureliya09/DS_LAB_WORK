@@ -45,9 +45,9 @@ void insert(struct Node **poly, int coeff, int exp)
     temp->link = newnode;
 }
 
-struct Node *addpolynomial(struct Node *p1, struct Node *p2)
+struct Node *addpoly(struct Node *p1, struct Node *p2)
 {
-    struct Node *finalans = NULL;
+    struct Node *final = NULL;
 
     while (p1 != NULL && p2 != NULL)
     {
@@ -55,7 +55,7 @@ struct Node *addpolynomial(struct Node *p1, struct Node *p2)
         {
             if (p1->coeff + p2->coeff != 0)
             {
-                insert(&finalans, p1->coeff + p2->coeff, p1->exp);
+                insert(&final, p1->coeff + p2->coeff, p1->exp);
             }
 
             p1 = p1->link;
@@ -63,29 +63,29 @@ struct Node *addpolynomial(struct Node *p1, struct Node *p2)
         }
         else if (p1->exp > p2->exp)
         {
-            insert(&finalans, p1->coeff, p1->exp);
+            insert(&final, p1->coeff, p1->exp);
             p1 = p1->link;
         }
         else
         {
-            insert(&finalans, p2->coeff, p2->exp);
+            insert(&final, p2->coeff, p2->exp);
             p2 = p2->link;
         }
     }
 
     while (p1 != NULL)
     {
-        insert(&finalans, p1->coeff, p1->exp);
+        insert(&final, p1->coeff, p1->exp);
         p1 = p1->link;
     }
 
     while (p2 != NULL)
     {
-        insert(&finalans, p2->coeff, p2->exp);
+        insert(&final, p2->coeff, p2->exp);
         p2 = p2->link;
     }
 
-    return finalans;
+    return final;
 }
 
 void display(struct Node *poly)
@@ -128,11 +128,9 @@ void main()
 {
     struct Node *poly1 = NULL;
     struct Node *poly2 = NULL;
-    struct Node *finalans = NULL;
+    struct Node *final = NULL;
 
-    int n1, n2;
-    int coeff, exp;
-    int i;
+    int n1, n2, coeff, exp;
 
     printf("\nEnter terms of polynomial in decreasing order of exponent:\n");
 
@@ -140,7 +138,7 @@ void main()
     scanf("%d", &n1);
 
 
-    for (i = 0; i < n1; i++)
+    for (int i = 0; i < n1; i++)
     {
         printf("Enter coefficient and exponent: ");
         scanf("%d %d", &coeff, &exp);
@@ -151,7 +149,7 @@ void main()
     printf("\nEnter number of terms in second polynomial: ");
     scanf("%d", &n2);
 
-    for (i = 0; i < n2; i++)
+    for (int i = 0; i < n2; i++)
     {
         printf("Enter coefficient and exponent: ");
         scanf("%d %d", &coeff, &exp);
@@ -165,8 +163,8 @@ void main()
     printf("Second Polynomial: ");
     display(poly2);
 
-    finalans = addpolynomial(poly1, poly2);
+    final = addpoly(poly1, poly2);
 
     printf("Addition: ");
-    display(finalans);
+    display(final);
 }
