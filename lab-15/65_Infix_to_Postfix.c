@@ -21,9 +21,7 @@ void push(char ch)
 char pop()
 {
     if (top == -1)
-    {
         return '\0';
-    }
 
     return stack[top--];
 }
@@ -31,9 +29,7 @@ char pop()
 char peek()
 {
     if (top == -1)
-    {
         return '\0';
-    }
 
     return stack[top];
 }
